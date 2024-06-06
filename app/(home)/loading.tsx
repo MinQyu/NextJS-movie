@@ -1,3 +1,9 @@
+import styles from "/styles/loading.module.css";
+
 export default function Loading() {
-  return <h2>Loading</h2>;
+  return (
+    <div className={styles.loaderContainer}>
+      <div className={styles.spinner}></div>
+    </div>
+  );
 }
