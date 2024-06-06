@@ -15,13 +15,14 @@ export async function generateMetadata({ params: { id } }: IParams) {
 }
 
 export default function MovieDetail({ params: { id } }: IParams) {
+  const NUM_OF_EXPORT = 7;
   return (
     <div>
       <Suspense fallback={<h1>Loading movie info</h1>}>
         <MovieInfo id={id} />
       </Suspense>
       <Suspense fallback={<h1>Loading movie cast</h1>}>
-        <MovieCast id={id} />
+        <MovieCast id={id} numOfExport={NUM_OF_EXPORT} />
       </Suspense>
       <Suspense fallback={<h1>Loading movie videos</h1>}>
         <MovieVideos id={id} />

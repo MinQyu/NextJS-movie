@@ -1,7 +1,8 @@
+import Link from "next/link";
 import { API_URL } from "../app/constants";
 import styles from "../styles/movie-cast.module.css";
 
-interface ICast {
+export interface ICast {
   id: number;
   name: string;
   profile_path: string;
@@ -14,15 +15,30 @@ export async function getCast(id: string): Promise<ICast[]> {
   return response.json();
 }
 
-export default async function MovieCast({ id }: { id: string }) {
-  const NUMBER_OF_EXPORT = 7;
+export default async function MovieCast({
+  id,
+  numOfExport,
+}: {
+  id: string;
+  numOfExport?: number;
+}) {
   const cast = await getCast(id);
+  const NUM_OF_EXPORT = numOfExport ? numOfExport : cast.length;
+  const defaultImagePath = "/images/no_img.png";
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Cast</h2>
-      {cast.slice(0, NUMBER_OF_EXPORT).map((c) => (
+      {numOfExport ? (
+        <Link href={`/movies/${id}/cast`}>more &rarr;</Link>
+      ) : (
+        <></>
+      )}
+      {cast.slice(0, NUM_OF_EXPORT).map((c) => (
         <div key={c.id} className={styles.profile_box}>
-          <img src={c.profile_path} />
+          <img
+            src={c.profile_path ? c.profile_path : defaultImagePath}
+            alt="no_img"
+          />
           <p>{c.name}</p>
           <p>{c.character}</p>
         </div>

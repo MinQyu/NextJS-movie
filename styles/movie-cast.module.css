@@ -18,12 +18,19 @@
     top: 20px;
 }
 
+.container a{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
 .profile_box {
     width: 150px;
     height: auto;
     margin-top: 20px;
     border-radius: 20px;
     line-height: 115%;
+
 }
 
 .profile_box img{
