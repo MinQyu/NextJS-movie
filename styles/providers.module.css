@@ -1,0 +1,45 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.provider {
+    padding: 15px;
+    width: 350px;
+    height: 400px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5%;
+    border-color: white;
+}
+
+.flag_box {
+    display: flex;
+    height: 30%;
+}
+
+.link_box {
+    position: relative;
+    width:90%;
+    left: 10px;
+    top: 5px;
+}
+
+.link_box h2{
+    position: relative;
+    font-weight: 600;
+    top: 5px;
+}
+
+.link_box a{
+    position: absolute;
+    top: 80px;
+    font-size: 15px;
+}
+
+.method_box {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,9 @@
+.container {
+    display: flexbox;
+}
+
+.container img {
+    width: 40px;
+    height: auto;
+    margin-top: 10px;
+}

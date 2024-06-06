@@ -1,0 +1,33 @@
+.container {
+    width:75%;
+    height: 20%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 20px 20px 20px;
+    top: 50px;
+    margin: 0 auto;
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
+}
+
+.title {
+    font-size: 25px;
+    position: absolute;
+    top: 20px;
+}
+
+.profile_box {
+    width: 150px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    line-height: 115%;
+}
+
+.profile_box img{
+    width: 100%;
+    border-radius: 20px;
+    height: auto;
+}
