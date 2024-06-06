@@ -5,21 +5,21 @@ import { API_URL } from "../../../../constants";
 import { IParams } from "../page";
 import styles from "../../../../../styles/providers.module.css";
 
-export const Metadata = {
+export const metadata = {
   title: "Providers",
 };
 
-export async function getProviders(id: string) {
+async function getProviders(id: string) {
   const response = await fetch(`${API_URL}/${id}/providers`);
   return response.json();
 }
 
-export function getCountryName(countryCode) {
+function getCountryName(countryCode) {
   const country = iso3166.whereAlpha2(countryCode);
   return country ? country.country : "Unknown Country";
 }
 
-export const renderProviderMethod = (
+const renderProviderMethod = (
   methodName: string,
   providerData: IProviderData[]
 ) => {

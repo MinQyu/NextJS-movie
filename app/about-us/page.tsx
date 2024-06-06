@@ -5,7 +5,7 @@ export const metadata = {
 export default function AboutUs() {
   return (
     <div>
-      <h1>about us</h1>
+      <h1>Kim Min-gyu</h1>
     </div>
   );
 }
