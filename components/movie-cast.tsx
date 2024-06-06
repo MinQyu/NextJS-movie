@@ -9,7 +9,7 @@ interface ICast {
   order: number;
 }
 
-async function getCast(id: string): Promise<ICast[]> {
+export async function getCast(id: string): Promise<ICast[]> {
   const response = await fetch(`${API_URL}/${id}/credits`);
   return response.json();
 }

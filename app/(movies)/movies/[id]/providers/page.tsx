@@ -14,12 +14,12 @@ export async function getProviders(id: string) {
   return response.json();
 }
 
-function getCountryName(countryCode) {
+export function getCountryName(countryCode) {
   const country = iso3166.whereAlpha2(countryCode);
   return country ? country.country : "Unknown Country";
 }
 
-const renderProviderMethod = (
+export const renderProviderMethod = (
   methodName: string,
   providerData: IProviderData[]
 ) => {
@@ -37,7 +37,7 @@ const renderProviderMethod = (
   );
 };
 
-interface IProvider {
+export interface IProvider {
   link: string;
   flatrate?: IProviderData[];
   buy?: IProviderData[];
