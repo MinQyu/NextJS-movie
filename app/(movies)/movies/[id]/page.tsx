@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import MovieInfo, { getMovie } from "../../../../components/movie-info";
 import MovieVideos from "../../../../components/movie-videos";
 import MovieCast from "../../../../components/movie-cast";
+import Loading from "./loading";
 
 export interface IParams {
   params: { id: string };
@@ -18,13 +19,13 @@ export default function MovieDetail({ params: { id } }: IParams) {
   const NUM_OF_EXPORT = 7;
   return (
     <div>
-      <Suspense fallback={<h1>Loading movie info</h1>}>
+      <Suspense fallback={<Loading />}>
         <MovieInfo id={id} />
       </Suspense>
-      <Suspense fallback={<h1>Loading movie cast</h1>}>
+      <Suspense fallback={<Loading />}>
         <MovieCast id={id} numOfExport={NUM_OF_EXPORT} />
       </Suspense>
-      <Suspense fallback={<h1>Loading movie videos</h1>}>
+      <Suspense fallback={<Loading />}>
         <MovieVideos id={id} />
       </Suspense>
     </div>
