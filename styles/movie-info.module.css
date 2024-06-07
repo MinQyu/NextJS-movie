@@ -24,3 +24,11 @@
   margin-top: 20px;
   gap: 20px;
 }
+
+.info p {
+  line-height: 115%;
+}
+
+.info a{
+  font-weight: 600;
+}
